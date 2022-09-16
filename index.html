@@ -2,18 +2,29 @@
 <html>
 	<body>
 		<div id="app"></div>
-		<script type="text/javascript">
+		<!-- <script type="text/javascript">
+			//page 2
+			//命令型プログラミングの例
 			const app = document.getElementById('app');
-
 			const header = document.createElement('h1');
-
 			const headerContent = document.createTextNode(
 				'Develop. Preview. Ship. 🚀',
 			);
-
 			header.appendChild(headerContent);
-
 			app.appendChild(header);
+		</script> -->
+
+		<!-- page 3-->
+		<script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+		<script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+		<!--Babel Script JSXをjsに変換してくれるやつ-->
+		<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+		<script type="text/jsx">
+			//宣言型の例　jsxがハイライトされないのはvscodeに何か入れないといけない？
+			const app = document.getElementById('app');
+			ReactDOM.render(<h1>Develop. Preview. Ship. 🚀</h1>, app);
 		</script>
+
 	</body>
 </html>
