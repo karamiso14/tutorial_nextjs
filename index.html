@@ -1,7 +1,7 @@
 <!-- index.html-->
 <html>
 	<body>
-		<!-- page7 props -->
+		<!-- page8 props -->
 		<div id="app"></div>
 		<script src="https://unpkg.com/react@17/umd/react.development.js"></script>
 		<script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
@@ -15,18 +15,27 @@
 		  }
 
 		  function HomePage() {
+			//フックを使うための下準備　フックは状態を管理したりするやつ
+			//第一引数が名前で第二引数からパラメータになる。ちょっと気持ち悪い
+			const [likes, setLikes] = React.useState(0);
 			const names = ['john moxley', 'bryan danielson', 'chris jericho'];
+
+			function handleClick(){
+				setLikes(likes + 1);
+			}
+
 			return (
 				<div>
-				<Header title="React 💙" />
-				<Header title="A new title" />
-				<Header title="Develop. Preview. Ship. 🚀" />
-				<ul>
-					{names.map((name) => (
-						<li key={name}>{name}</li>
-					))}
-				</ul>
-			</div>
+					<Header title="Develop. Preview. Ship. 🚀" />
+
+					<ul>
+						{names.map((name) => (
+							<li key={name}>{name}</li>
+						))}
+					</ul>
+
+					<button onClick={handleClick}>Like({likes})</button>
+				</div>
 			);
 		  }
 
